@@ -12,8 +12,21 @@
       defer
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"
     ></script>
+    <script type="text/javascript">
+      function disableRightClick() {
+        document.addEventListener(
+          "contextmenu",
+          function (e) {
+            if (e.target.nodeName === "IMG") {
+              e.preventDefault();
+            }
+          },
+          false
+        );
+      }
+    </script>
   </head>
-  <body class="home">
+  <body onload="disableRightClick()" class="home">
     <div class="moksha_wrapper">
       <!--HEADER-->
       <header class="animatable fadeInDown">

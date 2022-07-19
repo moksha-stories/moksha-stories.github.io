@@ -7,8 +7,21 @@
     <link rel="icon" href="assets/images/mok.ico" type="image/x-icon" />
     <link href="assets/css/style.css" rel="stylesheet" />
     <script src="assets/build/common.js"></script>
+    <script type="text/javascript">
+      function disableRightClick() {
+        document.addEventListener(
+          "contextmenu",
+          function (e) {
+            if (e.target.nodeName === "IMG") {
+              e.preventDefault();
+            }
+          },
+          false
+        );
+      }
+    </script>
   </head>
-  <body class="hideHeader inner">
+  <body onload="disableRightClick()" class="hideHeader inner">
     <!--HEADER-->
     <header class="animatable fadeInDown">
       <div class="m-logo">
